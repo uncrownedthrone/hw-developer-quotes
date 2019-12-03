@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const QuoteBox = () => {
-  const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/random'
+const AllQuotes = () => {
+  const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/page/1'
   const [quotes, setQuotes] = useState([])
   const getQuoteData = async () => {
     const resp = await axios.get(apiUrl)
-    setQuotes(resp.data)
+    console.log(resp.data[0])
+    setQuotes(resp.data[0])
   }
 
   useEffect(() => {
     getQuoteData()
   }, [])
 
-  const refresh = () => {
-    window.location.reload()
-  }
-
   return (
     <>
       <main>
         <section>
-          <p>{quotes.en}</p>
-          <p>- {quotes.author}</p>
+          <p>Author - {quotes.author}</p>
+          <p>Quote - {quotes.en}</p>
         </section>
-        <button onClick={() => refresh()}>New Quote</button>
       </main>
     </>
   )
 }
 
-export default QuoteBox
+export default AllQuotes
