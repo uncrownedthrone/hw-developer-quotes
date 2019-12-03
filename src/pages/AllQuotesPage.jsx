@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const AllQuotes = () => {
-  const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/page/1'
-  const [quotes, setQuotes] = useState([])
+  const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/'
+  const [quotes, setQuotes] = useState([[]])
   const getQuoteData = async () => {
     const resp = await axios.get(apiUrl)
-    console.log(resp.data[0])
-    setQuotes(resp.data[0])
+    console.log(resp.data)
+    setQuotes(resp.data)
   }
 
   useEffect(() => {
@@ -17,10 +17,14 @@ const AllQuotes = () => {
   return (
     <>
       <main>
-        <section>
-          <p>Author - {quotes.author}</p>
-          <p>Quote - {quotes.en}</p>
-        </section>
+        {quotes.map((quote, i) => {
+          return (
+            <section key={i}>
+              <p>Author - {quote.author}</p>
+              <p>Quote - {quote.en}</p>
+            </section>
+          )
+        })}
       </main>
     </>
   )
