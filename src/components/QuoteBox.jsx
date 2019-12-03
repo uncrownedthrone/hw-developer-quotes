@@ -6,7 +6,8 @@ const QuoteBox = () => {
   const [quotes, setQuotes] = useState([])
   const getQuoteData = async () => {
     const resp = await axios.get(apiUrl)
-    console.log(resp)
+    console.log(resp.data)
+    setQuotes(resp.data)
   }
 
   useEffect(() => {
@@ -15,12 +16,13 @@ const QuoteBox = () => {
 
   return (
     <>
-      <section>
-        <h1>Developer Quotes</h1>
-        <img src="" alt="" />
-        <p>Quote</p>
-        <p>- Name</p>
-      </section>
+      <main>
+        <section>
+          <img src="" alt="" />
+          <p>{quotes.en}</p>
+          <p>- {quotes.author}</p>
+        </section>
+      </main>
     </>
   )
 }
