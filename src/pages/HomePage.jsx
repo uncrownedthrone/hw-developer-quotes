@@ -1,8 +1,8 @@
 import React from 'react'
-import HelloWorld from '../components/HelloWorld'
+import QuoteBox from '../components/QuoteBox'
 
 const HomePage = () => {
-  return <HelloWorld />
+  return <QuoteBox />
 }
 
 export default HomePage
