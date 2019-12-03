@@ -6,13 +6,16 @@ const QuoteBox = () => {
   const [quotes, setQuotes] = useState([])
   const getQuoteData = async () => {
     const resp = await axios.get(apiUrl)
-    console.log(resp.data)
     setQuotes(resp.data)
   }
 
   useEffect(() => {
     getQuoteData()
   }, [])
+
+  const refresh = () => {
+    window.location.reload()
+  }
 
   return (
     <>
@@ -22,6 +25,7 @@ const QuoteBox = () => {
           <p>{quotes.en}</p>
           <p>- {quotes.author}</p>
         </section>
+        <button onClick={() => refresh()}>New Quote</button>
       </main>
     </>
   )
