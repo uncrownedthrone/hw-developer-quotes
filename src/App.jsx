@@ -11,7 +11,7 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/:allquotes">All Quotes</Link>
+              <Link to="/:allquotes">Click To See All Quotes</Link>
             </li>
           </ul>
         </nav>
@@ -23,5 +23,8 @@ const App = () => {
     </Router>
   )
 }
+
+// link for API
+// https://programming-quotes-api.herokuapp.com
 
 export default App

@@ -6,7 +6,113 @@ html {
   height: 100%;
 }
 
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ab2346;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   min-height: 100%;
+  background-color: #eaf2ef;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 250px;
+  margin: 0.5rem;
+  text-align: center;
+  font-family: 'Ubuntu Mono', monospace;
+  outline: none;
+}
+
+.quoteBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: flex-end;
+  /* border: 1px solid #c9daea; */
+  height: auto;
+  margin: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button:active {
+  outline: none;
+  background-color: rgb(93, 92, 93);
+  transform: translateY(4px);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+nav {
+  display: flex;
+  align-self: center;
+}
+
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 520px;
+  text-align: center;
+}
+.shape {
+  stroke-dasharray: 0 580;
+  stroke-dashoffset: 580;
+  stroke-width: 4px;
+  fill: transparent;
+  stroke: #fefefe;
+  border-bottom: 5px solid black;
+  transition: stroke-width 2.7s, stroke-dashoffset 2.7s, stroke-dasharray 1.3s;
+  transition-delay: 0s;
+  fill: rgb(20, 20, 20);
+}
+.text {
+  font-family: 'David Libre';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+  text-align: center;
+  height: 60px;
+  width: 520px;
+  font-variant: small-caps;
+}
+.shape-border {
+  stroke-width: 4px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 480 100;
 }
